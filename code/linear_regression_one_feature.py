@@ -16,7 +16,7 @@ cost = tf.reduce_mean(tf.square(y_-y))
 train_step = tf.train.GradientDescentOptimizer(0.0000001).minimize(cost)
 
 sess = tf.Session()
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()## updated method doesn't give deprecation error 
 sess.run(init)
 steps = 1000
 for i in range(steps):
